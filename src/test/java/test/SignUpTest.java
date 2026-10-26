@@ -44,6 +44,12 @@ public class SignUpTest{
         WebElement registerButton = driver.findElement(By.xpath("//input[@value='Register']"));
         registerButton.click();
 
+        String text = driver.findElement(By.cssSelector(".confirmation_message")).getText();
+        Assert.assertEquals(text,"Account is created!");
+
+
+
+
         driver.quit();
 
 
