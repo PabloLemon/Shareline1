@@ -17,7 +17,6 @@ public class addRemoveElements {
     @Test
     public void addTwoElements() {
 
-
         WebDriver driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
 
@@ -38,17 +37,13 @@ public class addRemoveElements {
         WebElement deleteElement = wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//button" +
                 "[text()='Delete']")));
 
-        //WebElement deleteElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button" +
-              //  "[text()='Delete']")));
-
         deleteElement.click();
 
-        List<WebElement> deleteButtonsAfterDelete = driver.findElements(By.xpath("//button[text()='Delete']"));
-        Assert.assertEquals(deleteButtonsAfterDelete.size(),1, "Количество кнопок после удаления не равно 1");
+        List<WebElement> deleteButtonsAfterDelete = driver.findElements
+                (By.xpath("//button[text()='Delete']"));
+        Assert.assertEquals
+                (deleteButtonsAfterDelete.size(),1, "Количество кнопок после удаления не равно 1");
 
         driver.quit();
     }
 }
-
-
-
